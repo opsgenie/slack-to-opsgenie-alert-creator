@@ -1,0 +1,21 @@
+service: slack-opsgenie-alert-creator
+
+provider:
+  name: aws
+#  region: us-west-2
+  runtime: nodejs4.3
+  memorySize: 128
+  timeout: 10
+  stage: dev
+#  profile: customProfile
+  environment:
+      slackToken: yourSlackToken
+      opsgenieApiKey: yourOpsGenieApiKey
+
+functions:
+  main:
+    name: SlackOpsGenieAlertCreator
+    description: Creates alert for messages sent to a channel
+    handler: main.handler
+    events:
+      - http: POST slack-opsgeni-alert-create
