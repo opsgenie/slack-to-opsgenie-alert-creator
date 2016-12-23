@@ -18,4 +18,4 @@ functions:
     description: Creates alert for messages sent to a channel
     handler: main.handler
     events:
-      - http: POST slack-opsgeni-alert-create
+      - http: POST slack-opsgenie-alert-create
