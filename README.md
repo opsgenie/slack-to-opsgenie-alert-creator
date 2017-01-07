@@ -42,3 +42,6 @@ It is an `Outgoing WebHook` application for Slack. Slack will post the messages 
   - Copy `token` and paste it to `serverless.yml`'s slackToken field
 
 ![slack-configuration.png](images/slack-configuration.png)
+
+### So you need more?
+If you want to create a fully featured Slack application with slash commands, events, and interactive messages, you might want to look at https://github.com/johnagan/serverless-slack-app repository. It really does a lot for you!
