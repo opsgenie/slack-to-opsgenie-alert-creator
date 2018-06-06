@@ -17,3 +17,5 @@ lib-cov
 pids
 logs
 results
+
+package-log.json
