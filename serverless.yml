@@ -1,10 +1,10 @@
-service: slack-opsgenie-alert-creator
+service: slack-to-opsgenie-alert-creator
 
 provider:
   name: aws
 #  region: us-west-2
   runtime: nodejs4.3
-  memorySize: 128
+  memorySize: 256
   timeout: 10
   stage: dev
 #  profile: customProfile
@@ -14,8 +14,8 @@ provider:
 
 functions:
   main:
-    name: SlackOpsGenieAlertCreator
+    name: SlackToOpsGenieAlertCreator
     description: Creates alert for messages sent to a channel
     handler: main.handler
     events:
-      - http: POST slack-opsgenie-alert-create
+      - http: POST slack-to-opsgenie-alert-create

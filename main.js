@@ -1,6 +1,8 @@
 /**
- * Created by Serhat Can on 09/12/16.
- */
+    * @author Serhat Can
+    * @version 09/12/16
+    * @updated v1.1 06/06/18
+    */
 'use strict';
 
 const opsgenie = require('opsgenie-sdk');
@@ -27,11 +29,13 @@ exports.handler = function (event, context, callback) {
         message: params.text
     };
 
-    opsgenie.alert.create(create_alert_json, function (error, alert) {
-        if (error) {
-            callback(error);
-        } else {
+    opsgenie.alertV2.create(create_alert_json, function (error, alert) {
+        if (!error) {
+            console.log("Alert creating response is a success!", alert);
             callback(null, "successful");
+        } else {
+            console.log("Error while trying to create an alert", error);
+            callback(error);
         }
     });
 };
